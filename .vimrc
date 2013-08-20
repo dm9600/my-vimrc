@@ -9,7 +9,7 @@ set number
 
 
 colorscheme evening
-"oogabooga
+
 "Set working directory to current directory always
 set autochdir
 
