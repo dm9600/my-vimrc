@@ -55,20 +55,15 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 " disable autocommenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" CTRL-X and SHIFT-Del are Cut
+" CTRL-X is Cut
 vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
 
-" CTRL-C and CTRL-Insert are Copy
+" CTRL-C is Copy
 vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
 
-" CTRL-V and SHIFT-Insert are Paste
+" CTRL-V is Paste
 map <C-V> "+gP
-map <S-Insert> "+gP
-
 cmap <C-V> <C-R>+
-cmap <S-Insert> <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -86,7 +81,7 @@ noremap <C-Q> <C-V>
 
 " Set CtrlP to MRU mode by default
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Map NERDTree to ctrl+n
 map <C-n> :NERDTreeToggle<CR>
