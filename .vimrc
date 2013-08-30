@@ -86,3 +86,5 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 " Map NERDTree to ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
+" Map F5 to :buffers
+:nnoremap <F5> :buffers<CR>:buffer<Space>
