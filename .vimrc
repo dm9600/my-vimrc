@@ -1,4 +1,6 @@
+" Load pathogen
 execute pathogen#infect()
+call pathogen#helptags()
 
 set noswapfile
 
