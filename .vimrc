@@ -16,7 +16,7 @@ set autochdir
 " Don't save when switching buffers
 set hidden
 
-" This shows what you are typing as a command.  I love this!
+" This shows what you are typing as a command.
 set showcmd
 
 " Who doesn't like autoindent?
@@ -33,9 +33,6 @@ set softtabstop=3
 " Enable mouse support in console
 set mouse=a
 
-" Ignoring case is a fun trick
-set ignorecase
-
 " When I close a tab, remove the buffer
 set nohidden
 
@@ -46,11 +43,6 @@ set linebreak
 filetype on
 filetype plugin on
 filetype indent on
-
-" Python specific
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd BufRead *.py set nocindent
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 
 " disable autocommenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -86,5 +78,5 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 " Map NERDTree to ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
-" Map F5 to :buffers
-:nnoremap <F5> :buffers<CR>:buffer<Space>
+" Try to map ctrl + s to save
+map <C-s> :update<CR>
