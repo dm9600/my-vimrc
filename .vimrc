@@ -9,7 +9,6 @@ set wildmenu
 set wildmode=list:longest,full
 set number
 
-
 colorscheme evening
 
 "Set working directory to current directory always
@@ -24,13 +23,9 @@ set showcmd
 " Who doesn't like autoindent?
 set autoindent
 
-" Spaces are better than a tab character
-set expandtab
-set smarttab
-
-" Who wants an 8 character tab?  Not me!
-set shiftwidth=3
-set softtabstop=3
+" Use tab characters, and set a 2 space tab length
+set tabstop=2
+set autoindent
 
 " Enable mouse support in console
 set mouse=a
@@ -63,7 +58,6 @@ cmap <C-V> <C-R>+
 " Visual mode without the +virtualedit feature.  They are pasted as if they
 " were characterwise instead.
 " Uses the paste.vim autoload script.
-
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
@@ -76,9 +70,6 @@ noremap <C-Q> <C-V>
 " Set CtrlP to MRU mode by default
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
-
-" Map NERDTree to ctrl+n
-map <C-n> :NERDTreeToggle<CR>
 
 " Try to map ctrl + s to save
 map <C-s> :update<CR>
