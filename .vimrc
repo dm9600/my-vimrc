@@ -4,9 +4,11 @@ call pathogen#helptags()
 
 set noswapfile
 
-set ts=4
+" Use wildmenu for everything
 set wildmenu
 set wildmode=list:longest,full
+
+"Line numbering
 set number
 
 colorscheme evening
@@ -20,7 +22,6 @@ set hidden
 " This shows what you are typing as a command.
 set showcmd
 
-" Who doesn't like autoindent?
 set autoindent
 
 " Use tab characters, and set a 2 space tab length
@@ -70,6 +71,3 @@ noremap <C-Q> <C-V>
 " Set CtrlP to MRU mode by default
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
-
-" Try to map ctrl + s to save
-map <C-s> :update<CR>
