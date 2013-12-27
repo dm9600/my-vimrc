@@ -71,3 +71,16 @@ noremap <C-Q> <C-V>
 " Set CtrlP to MRU mode by default
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Map F5 to :buffers
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" Map j and k to gj and gk for better line wrapping support
+:map j gj
+:map k gk
+
+" Stop showing @ symbols when when the line doesn't fit on screen
+set display+=lastline
+
+" Using the C command clears the search highlighting
+:command C let @/=""
