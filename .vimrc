@@ -22,12 +22,6 @@ set hidden
 " This shows what you are typing as a command.
 set showcmd
 
-set autoindent
-
-" Use tab characters, and set a 2 space tab length
-set tabstop=2
-set autoindent
-
 " Enable mouse support in console
 set mouse=a
 
@@ -62,6 +56,7 @@ cmap <C-V> <C-R>+
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
+" Set mappings for insert mode and visual mode
 imap <S-Insert> <C-V>
 vmap <S-Insert> <C-V>
 
@@ -78,6 +73,12 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 " Map j and k to gj and gk for better line wrapping support
 :map j gj
 :map k gk
+
+" Set tab to 2 space
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
 
 " Stop showing @ symbols when when the line doesn't fit on screen
 set display+=lastline
