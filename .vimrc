@@ -8,10 +8,11 @@ set noswapfile
 set wildmenu
 set wildmode=list:longest,full
 
+colorscheme desert
+set guifont=Monospace\ 9
+
 "Line numbering
 set number
-
-colorscheme evening
 
 "Set working directory to current directory always
 set autochdir
@@ -85,3 +86,6 @@ set display+=lastline
 
 " Using the C command clears the search highlighting
 :command C let @/=""
+
+" Remove lefthand scrollbar in gVim. This fixes the cursor disappearing bug in ubuntu
+set guioptions-=L
