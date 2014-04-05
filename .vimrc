@@ -9,7 +9,7 @@ set wildmenu
 set wildmode=list:longest,full
 
 colorscheme desert
-set guifont=Monospace\ 9
+set guifont=Monaco:h12
 
 "Line numbering
 set number
@@ -54,8 +54,8 @@ cmap <C-V> <C-R>+
 " Visual mode without the +virtualedit feature.  They are pasted as if they
 " were characterwise instead.
 " Uses the paste.vim autoload script.
-exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
-exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+exe 'inoremap <script> <D-V>' paste#paste_cmd['i']
+exe 'vnoremap <script> <D-V>' paste#paste_cmd['v']
 
 " Set mappings for insert mode and visual mode
 imap <S-Insert> <C-V>
@@ -89,3 +89,10 @@ set display+=lastline
 
 " Remove lefthand scrollbar in gVim. This fixes the cursor disappearing bug in ubuntu
 set guioptions-=L
+
+" Set all file encodings to utf-8
+set fileencodings=utf-8
+
+:set smartcase
+
+:set ruler
