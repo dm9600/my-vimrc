@@ -93,6 +93,12 @@ set guioptions-=L
 " Set all file encodings to utf-8
 set fileencodings=utf-8
 
+" If search is uppercase, case sensitive, otherwise ignore case
+:set ignorecase
 :set smartcase
 
+" Show cursor location
 :set ruler
+
+" close buffer without closing window with F5
+nnoremap <F5> :bp<bar>sp<bar>bn<bar>bd<CR>
