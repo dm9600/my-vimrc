@@ -131,8 +131,12 @@ set term=builtin_ansi
 set history=10000
 
 " prepopulate vimgrep
-nnoremap <F3> :noautocmd vimgrep //j <left><left><left>
-nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
+" nnoremap <F3> :noautocmd vimgrep //j <left><left><left>
+" nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
+" vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
+
+nnoremap <F3> :Ack '' --type=<left><left><left><left><left><left><left><left><left><left>
+nnoremap <F4> :Ack '<C-R><C-W>' --type=
 vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
 
 " ,e command will do :e on the current directory
@@ -140,3 +144,42 @@ map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " don't immediately autocomplete when I hit ctrl n, let me see options first
 set completeopt=longest,menuone
+
+" don't search multiple times in folded text
+set fdo-=search
+
+" EASYMOTION CONFIG
+" map comma as leader key
+let mapleader=","
+
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  ? <Plug>(easymotion-sn)
+omap ? <Plug>(easymotion-tn)
+
+" Set smartcase for easymotion
+let g:EasyMotion_smartcase = 1
+
+" Use easymotion directional keys
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+" JK motions: Line motions
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
