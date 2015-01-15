@@ -112,11 +112,12 @@ set ignorecase smartcase
 set ruler
 
 " close buffer without closing window with F2
-nnoremap <F2> :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <F1> :%s///gc<left><left><left><left>
+nnoremap <F2> :%s/<C-R><C-W>//gc<left><left><left>
 
 " folding settings
 set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
+" set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1
 
@@ -130,17 +131,20 @@ set term=builtin_ansi
 " max history
 set history=10000
 
+" map space as leader key
+let mapleader=" "
+
 " prepopulate vimgrep
 " nnoremap <F3> :noautocmd vimgrep //j <left><left><left>
 " nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
 " vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
 
-nnoremap <F3> :Ack '' --type=<left><left><left><left><left><left><left><left><left><left>
+nnoremap <F3> :Ack '' --type=<left><left><left><left><left><left><left><left><left>
 nnoremap <F4> :Ack '<C-R><C-W>' --type=
-vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
+vnoremap <unique> <F4> y:Ack '<C-R><C-W>' --type=
 
 " ,e command will do :e on the current directory
-map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " don't immediately autocomplete when I hit ctrl n, let me see options first
 set completeopt=longest,menuone
@@ -148,31 +152,20 @@ set completeopt=longest,menuone
 " don't search multiple times in folded text
 set fdo-=search
 
-" EASYMOTION CONFIG
-" map comma as leader key
-let mapleader=","
-
 " Gif config
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-map  ? <Plug>(easymotion-sn)
-omap ? <Plug>(easymotion-tn)
 
 " Set smartcase for easymotion
 let g:EasyMotion_smartcase = 1
 
 " Use easymotion directional keys
-
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
 nmap s <Plug>(easymotion-s)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -184,5 +177,8 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 
-" enable neocomplcache
-let g:neocomplcache_enable_at_startup = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
+
+" Keep visual mode selection when indenting
+vnoremap > >gv
+vnoremap < <gv
