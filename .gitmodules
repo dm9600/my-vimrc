@@ -22,3 +22,25 @@
 [submodule "bundle/vim-colors-solarized"]
         path = bundle/vim-colors-solarized
         url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/ack.vim"]
+        path = bundle/ack.vim
+        url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/syntastic"]
+        path = bundle/syntastic
+        url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/tabular"]
+        path = bundle/tabular
+        url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-indent-guides"]
+        path = bundle/vim-indent-guides
+        url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-easymotion"]
+        path = bundle/vim-easymotion
+        url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-javascript"]
+        path = bundle/vim-javascript
+        url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-literate-coffeescript"]
+        path = bundle/vim-literate-coffeescript
+        url = https://github.com/mintplant/vim-literate-coffeescript.git
+
