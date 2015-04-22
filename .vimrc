@@ -182,3 +182,12 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 " Keep visual mode selection when indenting
 vnoremap > >gv
 vnoremap < <gv
+
+" Remap switch window to use leader key
+nnoremap <C-c> <C-^>
+
+" Easily find javascript methods with F5
+map <F5> <Plug>(easymotion-sn).*:<left><left><left>
+
+" Easily find javascript methods with F5
+map <F6> <Plug>(easymotion-sn)describe '.*'<left><left><left>
