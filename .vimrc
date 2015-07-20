@@ -2,6 +2,8 @@
 execute pathogen#infect()
 call pathogen#helptags()
 
+set nocompatible
+
 " because swap files are annoying
 set noswapfile
 
@@ -72,9 +74,6 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_regexp = 1
 let g:ctrlp_working_path_mode = 'rw'
 
-" Map F4 to :buffers
-:nnoremap <F4> :buffers<CR>:buffer<Space>
-
 " Bind netrw explore to @e
 let @e=':Ex'
 
@@ -113,7 +112,6 @@ set ruler
 
 " close buffer without closing window with F2
 nnoremap <F1> :%s///gc<left><left><left><left>
-nnoremap <F2> :%s/<C-R><C-W>//gc<left><left><left>
 
 " folding settings
 set foldmethod=indent   "fold based on indent
@@ -139,10 +137,12 @@ let mapleader=" "
 " nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
 " vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
 
-nnoremap <F3> :Ack '' --type=<left><left><left><left><left><left><left><left><left>
-nnoremap <F4> :Ack '<C-R><C-W>' --type=
+nnoremap <F5> :Ack '' --type=<left><left><left><left><left><left><left><left><left>
+nnoremap <F6> :Ack '<C-R><C-W>' --type=
+nnoremap <F7> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
 vnoremap <unique> <F4> y:Ack '<C-R><C-W>' --type=
 
+nnoremap <F7> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
 " ,e command will do :e on the current directory
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -186,8 +186,12 @@ vnoremap < <gv
 " Remap switch window to use leader key
 nnoremap <C-c> <C-^>
 
-" Easily find javascript methods with F5
-map <F5> <Plug>(easymotion-sn).*:<left><left><left>
+" coffeescript specific keybinds
+" Easily find javascript methods
+map <F9> <Plug>(easymotion-sn).*:<left><left><left>
+" Easily find describe methods
+map <F10> <Plug>(easymotion-sn)describe '.*'<left><left><left>
+nnoremap <F2> :g/console\\|debugger/d<CR>
 
-" Easily find javascript methods with F5
-map <F6> <Plug>(easymotion-sn)describe '.*'<left><left><left>
+" Treat all numerals as decimal
+set nrformats=

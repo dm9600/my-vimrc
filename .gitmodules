@@ -43,4 +43,9 @@
 [submodule "bundle/vim-literate-coffeescript"]
         path = bundle/vim-literate-coffeescript
         url = https://github.com/mintplant/vim-literate-coffeescript.git
-
+[submodule "bundle/YouCompleteMe"]
+        path = bundle/YouCompleteMe
+        url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim-surround"]
+        path = bundle/vim-surround
+        url = https://github.com/tpope/vim-surround.git
