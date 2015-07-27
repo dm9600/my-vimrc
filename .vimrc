@@ -191,7 +191,29 @@ nnoremap <C-c> <C-^>
 map <F9> <Plug>(easymotion-sn).*:<left><left><left>
 " Easily find describe methods
 map <F10> <Plug>(easymotion-sn)describe '.*'<left><left><left>
-nnoremap <F2> :g/console\\|debugger/d<CR>
+
+function! DeleteExtras()
+  :g/console\|debugger/d
+  if match(join(getline(1,'$'), "\n"), "\.only") != -1
+    :%s/\.only//g
+  endif
+endfunction
+
+nnoremap <F2> :call DeleteExtras()<CR>
+
+function! ConsoleLog()
+  let cw = expand("<cword>")
+  exec "normal! ^iconsole.log '"
+  exec "normal! $a'"
+  exec "normal! oconsole.log JSON.stringify(" . cw
+  exec "normal! a, undefined, 2)"
+endfunction
+
+nnoremap @l :call ConsoleLog()<CR>
 
 " Treat all numerals as decimal
 set nrformats=
+
+set iskeyword+=.
+set iskeyword+=@-@
+
