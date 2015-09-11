@@ -110,9 +110,6 @@ set ignorecase smartcase
 " Show cursor location
 set ruler
 
-" close buffer without closing window with F2
-nnoremap <F1> :%s///gc<left><left><left><left>
-
 " folding settings
 set foldmethod=indent   "fold based on indent
 " set foldnestmax=10      "deepest fold is 10 levels
@@ -137,12 +134,20 @@ let mapleader=" "
 " nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
 " vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
 
-nnoremap <F5> :Ack '' --type=<left><left><left><left><left><left><left><left><left>
-nnoremap <F6> :Ack '<C-R><C-W>' --type=
-nnoremap <F7> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
-vnoremap <unique> <F4> y:Ack '<C-R><C-W>' --type=
+" close buffer without closing window with F2
+nnoremap <F1> :%s///gc<left><left><left><left>
+vnoremap <unique> <F1> y:%s/<C-R><C-W>//gc<left><left><left>
+nnoremap <F2> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
+vnoremap <unique> <F2> y:Ack '<C-R><C-W>' --type=c
+nnoremap <F3> :GitGutterToggle <CR>
 
-nnoremap <F7> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
+" coffeescript specific keybinds
+" Easily find javascript methods
+map <F5> <Plug>(easymotion-sn).*:<left><left><left>
+" Easily find describe methods
+map <F6> <Plug>(easymotion-sn)describe '.*'<left><left><left>
+nnoremap <F7> :call DeleteExtras()<CR>
+
 " ,e command will do :e on the current directory
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -166,6 +171,7 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
 nmap s <Plug>(easymotion-s)
+nmap - <Plug>(choosewin)
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -177,6 +183,8 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
 " Keep visual mode selection when indenting
@@ -186,20 +194,12 @@ vnoremap < <gv
 " Remap switch window to use leader key
 nnoremap <C-c> <C-^>
 
-" coffeescript specific keybinds
-" Easily find javascript methods
-map <F9> <Plug>(easymotion-sn).*:<left><left><left>
-" Easily find describe methods
-map <F10> <Plug>(easymotion-sn)describe '.*'<left><left><left>
-
 function! DeleteExtras()
   :g/console\|debugger/d
   if match(join(getline(1,'$'), "\n"), "\.only") != -1
     :%s/\.only//g
   endif
 endfunction
-
-nnoremap <F2> :call DeleteExtras()<CR>
 
 function! ConsoleLog()
   let cw = expand("<cword>")
@@ -211,9 +211,8 @@ endfunction
 
 nnoremap @l :call ConsoleLog()<CR>
 
+" Disable git gutter signs
+let g:gitgutter_enabled = 0
+
 " Treat all numerals as decimal
 set nrformats=
-
-set iskeyword+=.
-set iskeyword+=@-@
-
