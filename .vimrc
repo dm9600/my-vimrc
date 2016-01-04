@@ -42,16 +42,6 @@ filetype indent on
 " disable autocommenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" CTRL-X is Cut
-" vnoremap <C-X> "+x
-
-" CTRL-C is Copy
-" vnoremap <C-C> "+y
-
-" CTRL-V is Paste
-" map <C-V> "+gP
-" cmap <C-V> <C-R>+
-
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
 " were characterwise instead.
@@ -134,16 +124,48 @@ let mapleader=" "
 " nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
 " vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
 
-" close buffer without closing window with F2
+" close buffer without closing window with F1
 nnoremap <F1> :%s///gc<left><left><left><left>
 vnoremap <unique> <F1> y:%s/<C-R><C-W>//gc<left><left><left>
-nnoremap <F2> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
-vnoremap <unique> <F2> y:Ack '<C-R><C-W>' --type=c
+
+let s:prevFileType = ""
+function! AckThis(str)
+  if len(a:str) == 0
+    let l:str = input("Enter search string: ", "")
+    let quoted = "'" . l:str . "'"
+  else
+    let l:str = a:str
+  endif
+
+  if len(l:str) == 0
+    return
+  endif
+
+  let quoted = "'" . l:str . "'"
+  let l:ft = input("Enter file type: ")
+
+  if len(l:ft) == 0
+    let typed = "--type=" . s:prevFileType
+  else
+    let typed = "--type=" . l:ft
+    let s:prevFileType = l:ft
+  endif
+
+  if len(typed) == 7
+    return
+  endif
+
+  execute "Ack!" quoted typed
+endfunction
+
+" nnoremap <F2> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
+vnoremap <F2> :call AckThis("<C-R><C-W>")<CR>
+nnoremap <F2> :call AckThis("")<CR>
 nnoremap <F3> :GitGutterToggle <CR>
 
 " coffeescript specific keybinds
 " Easily find javascript methods
-map <F5> <Plug>(easymotion-sn).*:<left><left><left>
+map <F5> <Plug>(easymotion-sn).*.*:<left><left><left>
 " Easily find describe methods
 map <F6> <Plug>(easymotion-sn)describe '.*'<left><left><left>
 nnoremap <F7> :call DeleteExtras()<CR>
@@ -216,3 +238,6 @@ let g:gitgutter_enabled = 0
 
 " Treat all numerals as decimal
 set nrformats=
+
+" organize imports for go
+let g:go_fmt_command = "goimports"
