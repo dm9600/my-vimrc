@@ -240,4 +240,16 @@ let g:gitgutter_enabled = 0
 set nrformats=
 
 " organize imports for go
-let g:go_fmt_command = "goimports"
+let g:syntastic_javascript_checkers = ['eslint']
+
+" go specific
+autocmd FileType go setlocal shiftwidth=8 tabstop=8
+
+" auto start indent guides
+" autocmd VimEnter * IndentGuidesEnable
+
+" don't echo rooter directory changes
+let g:rooter_silent_chdir = 1
+
+" don't ask each time for loading a lvimrc
+let g:localvimrc_ask=0
