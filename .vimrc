@@ -253,3 +253,7 @@ let g:rooter_silent_chdir = 1
 
 " don't ask each time for loading a lvimrc
 let g:localvimrc_ask=0
+
+" http://superuser.com/a/553775/253897
+set selection=exclusive
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html':'~/Dropbox/vimwiki/html/'}]

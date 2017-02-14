@@ -55,3 +55,12 @@
 [submodule "bundle/vim-rooter"]
 	path = bundle/vim-rooter
 	url = git@github.com:airblade/vim-rooter.git
+[submodule "bundle/delimitMate"]
+        path = bundle/delimitMate
+        url = git@github.com:Raimondi/delimitMate.git
+[submodule "bundle/vim-snippets"]
+        path = bundle/vim-snippets
+        url = git@github.com:honza/vim-snippets.git
+[submodule "bundle/vim-choosewin"]
+        path = bundle/vim-choosewin
+        url = git@github.com:t9md/vim-choosewin.git
