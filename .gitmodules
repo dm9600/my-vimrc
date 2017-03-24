@@ -100,3 +100,15 @@
 [submodule "plugged/fzf.vim"]
 	path = plugged/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "bundle/tsuquyomi"]
+	path = bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "bundle/vimproc.vim"]
+	path = bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "editorconfig-vim"]
+	path = editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

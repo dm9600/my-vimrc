@@ -159,9 +159,11 @@ function! AckThis(str)
 endfunction
 
 " nnoremap <F2> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
-vnoremap <F2> :call AckThis("<C-R><C-W>")<CR>
-nnoremap <F2> :call AckThis("")<CR>
-nnoremap <F3> :GitGutterToggle <CR>
+nnoremap <F2> :Ack --
+nnoremap <F3> :YcmCompleter GoToDefinition
+" vnoremap <F2> :call AckThis("<C-R><C-W>")<CR>
+" nnoremap <F2> :call AckThis("")<CR>
+" nnoremap <F3> :GitGutterToggle <CR>
 
 " coffeescript specific keybinds
 " Easily find javascript methods
@@ -257,3 +259,14 @@ let g:localvimrc_ask=0
 " http://superuser.com/a/553775/253897
 set selection=exclusive
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html':'~/Dropbox/vimwiki/html/'}]
+imap <C-j> <Plug>snipMateNextOrTrigger
+:imap <C-j> <Plug>snipMateNextOrTrigger
+
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+set history=1000
