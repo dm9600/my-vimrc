@@ -82,9 +82,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
 [submodule "bundle/vim-table-mode"]
 	path = bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
@@ -109,6 +106,12 @@
 [submodule "bundle/vimproc.vim"]
 	path = bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
-[submodule "editorconfig-vim"]
-	path = editorconfig-vim
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/QFEnter"]
+	path = bundle/QFEnter
+	url = https://github.com/yssl/QFEnter.git
+[submodule "bundle/nerdtree"]
+	path = bundle/QFEnter
+	url = https://github.com/scrooloose/nerdtree.git
