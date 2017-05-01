@@ -122,7 +122,8 @@ let mapleader=" "
 " prepopulate vimgrep
 " nnoremap <F3> :noautocmd vimgrep //j <left><left><left>
 " nnoremap <F4> :noautocmd vimgrep /<C-R><C-W>/j <bar>cw<left><left><left>
-" vnoremap <unique> <F4> y:noautocmd vimgrep /<c-r>"/j <bar>cw<left><left><left>
+" vnoremap <unique> <F4> y:noautocmd Ack! /<c-r>"/j <bar>cw<left><left><left>
+vnoremap <unique> <F4> y:Ack! <c-r>"
 
 " close buffer without closing window with F1
 nnoremap <F1> :%s///gc<left><left><left><left>
@@ -159,8 +160,8 @@ function! AckThis(str)
 endfunction
 
 " nnoremap <F2> :Ack '' --type=c<left><left><left><left><left><left><left><left><left><left>
-nnoremap <F2> :Ack --
-nnoremap <F3> :YcmCompleter GoToDefinition
+nnoremap <C-S> :Ack! 
+vnoremap <unique> <C-S> y:Ack! <c-r>"
 " vnoremap <F2> :call AckThis("<C-R><C-W>")<CR>
 " nnoremap <F2> :call AckThis("")<CR>
 " nnoremap <F3> :GitGutterToggle <CR>
@@ -259,8 +260,6 @@ let g:localvimrc_ask=0
 " http://superuser.com/a/553775/253897
 set selection=exclusive
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html':'~/Dropbox/vimwiki/html/'}]
-imap <C-j> <Plug>snipMateNextOrTrigger
-:imap <C-j> <Plug>snipMateNextOrTrigger
 
 if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
@@ -274,3 +273,18 @@ set history=1000
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"

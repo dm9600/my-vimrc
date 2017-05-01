@@ -115,3 +115,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/QFEnter
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
