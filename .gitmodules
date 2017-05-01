@@ -13,3 +13,108 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-alrine"]
+        path = bundle/vim-airline
+        url = https://github.com/bling/vim-airline.git
+[submodule "bundle/vim-colors-solarized"]
+        path = bundle/vim-colors-solarized
+        url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/ack.vim"]
+        path = bundle/ack.vim
+        url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/syntastic"]
+        path = bundle/syntastic
+        url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/tabular"]
+        path = bundle/tabular
+        url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-indent-guides"]
+        path = bundle/vim-indent-guides
+        url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-easymotion"]
+        path = bundle/vim-easymotion
+        url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-javascript"]
+        path = bundle/vim-javascript
+        url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-literate-coffeescript"]
+        path = bundle/vim-literate-coffeescript
+        url = https://github.com/mintplant/vim-literate-coffeescript.git
+[submodule "bundle/YouCompleteMe"]
+        path = bundle/YouCompleteMe
+        url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim-surround"]
+        path = bundle/vim-surround
+        url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "bundle/vim-rooter"]
+	path = bundle/vim-rooter
+	url = git@github.com:airblade/vim-rooter.git
+[submodule "bundle/delimitMate"]
+        path = bundle/delimitMate
+        url = git@github.com:Raimondi/delimitMate.git
+[submodule "bundle/vim-snippets"]
+        path = bundle/vim-snippets
+        url = git@github.com:honza/vim-snippets.git
+[submodule "bundle/vim-choosewin"]
+        path = bundle/vim-choosewin
+        url = git@github.com:t9md/vim-choosewin.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-addon-mw-utils"]
+	path = bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/vim-localvimrc"]
+	path = bundle/vim-localvimrc
+	url = https://github.com/embear/vim-localvimrc.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/vim-table-mode"]
+	path = bundle/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "bundle/vim-unimpaired"]
+	path = bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "plugged/fzf.vim"]
+	path = plugged/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "bundle/tsuquyomi"]
+	path = bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "bundle/vimproc.vim"]
+	path = bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/QFEnter"]
+	path = bundle/QFEnter
+	url = https://github.com/yssl/QFEnter.git
+[submodule "bundle/nerdtree"]
+	path = bundle/QFEnter
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
