@@ -270,3 +270,7 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 set history=1000
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
